@@ -5,6 +5,8 @@
  */
 package org.unitec.finalheroku;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import org.springframework.data.annotation.Id;
 
 /**
@@ -13,12 +15,34 @@ import org.springframework.data.annotation.Id;
  */
 public class Mensajitos {
    @Id
-   private Integer id;
+   private String id;
+   private LocalDate fecha;
+   private LocalTime hora;
+
+    public Mensajitos(LocalTime hora) {
+        this.hora = hora;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
     private String titulo;
     private String cuerpo;
 
-    public Mensajitos(Integer id) {
+    public Mensajitos(String id) {
         this.id = id;
+    }
+
+    public Mensajitos(String id, String titulo, String cuerpo) {
+        this.id = id;
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+        fecha=LocalDate.now();
+        hora=LocalTime.now();
     }
 
 
@@ -45,14 +69,24 @@ public class Mensajitos {
     public Mensajitos(String titulo, String cuerpo) {
         this.titulo = titulo;
         this.cuerpo = cuerpo;
+        fecha=LocalDate.now();
+        hora=LocalTime.now();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
     }
     
 }
