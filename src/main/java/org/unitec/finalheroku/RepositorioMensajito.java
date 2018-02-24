@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author T-107
  */
-public interface RepositorioMensajito extends MongoRepository<Mensajitos,Integer >{
+public interface RepositorioMensajito extends MongoRepository<Mensajitos,String  >{
     
     
     
