@@ -59,7 +59,7 @@ public class ControladorMensajes {
     
     
     //borrar
-    
+    @CrossOrigin
 @RequestMapping(value="/mensajitos/{id}", method=RequestMethod.DELETE,
             headers ={"Accept=application/json"})
     public Estatus borrarMensaje(@PathVariable String id){
